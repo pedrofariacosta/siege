@@ -1,0 +1,437 @@
+@charset "UTF-8";
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Russo+One&display=swap');
+
+:root{
+    --font1:"Anton", sans-serif;
+    --font2:"Inter", sans-serif;
+    --font3:"Russo One", sans-serif;
+    --fontSize: 20px;
+}
+
+html, body{
+    font-family: var(--font1);
+    font-size: var(--fontSize);
+    margin: 0px;
+    padding: 0px;
+    width: 100dvw;
+    scroll-behavior: smooth;  /*suaviza o movimento ao clicar nos itens da navbar*/
+}
+
+/*--Header--*/
+header#cabecalho img#imagem_fundo{
+    width: 100dvw;
+    position: relative;
+    height: 95dvh;
+    object-fit: cover;
+}
+
+header#cabecalho nav#menu{
+    display: flex;
+    font-size: 1rem;
+    text-transform: uppercase;
+    position: fixed;
+    top: 0px;
+    background-color: rgb(0, 0, 0);
+    width: 100dvw;
+    height: 14dvh;
+    z-index: 1000; /*para garantir que fique acima de outros elementos */
+}
+
+header#cabecalho nav#menu ul{
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0px 20px;
+    height: 14dvh;
+    margin: 5px 0px 0px 0px;
+    gap: 30px;
+}
+
+header#cabecalho nav#menu ul li#logo{
+    margin-right: auto;
+}
+
+header#cabecalho nav#menu ul li#logo a img{
+    width: 90px;  
+}
+
+header#cabecalho nav#menu ul li{
+    position: relative;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+header#cabecalho nav#menu ul li a{
+    color: white;
+    padding: 10px 15px;
+    text-decoration: none;
+    display: inline-block;
+}
+
+header#cabecalho nav#menu ul li:not(#logo) a{
+    position: relative;
+    padding: 10px;
+}
+
+header#cabecalho nav#menu ul li:not(#logo) a::after{ /* o ::after cria uma linha decorativa escondida (width: 0%) */
+    content: "";                                       /* o :hover aciona a animação */
+    position: absolute;                                 /* o ::after se expande (width: 100%) no hover */
+    bottom: 0px;
+    left: 0px;
+    height: 3px; /*espessura*/
+    width: 0%; /*a linha começa invisivel (0%)*/
+    background: linear-gradient(to right, #00ffe5, #00bfff);  
+    transition: width 0.3s ease;
+}
+
+header#cabecalho nav#menu ul li:not(#logo) a:hover::after{
+    width: 100%; /*a linha termina 100% visivel*/
+}
+
+/*--Main--*/
+main{
+    background-color: rgb(5, 10, 25); 
+    margin-top: -6dvh;
+    padding: 20px;
+    color: white; 
+}
+
+/*--Visão Geral--*/
+main section#visaogeral{
+    width: 60dvw;
+    margin: 100px auto 10px auto;
+    scroll-margin-top: 150px; /*faz o navegador parar 150px antes do topo quando rolar ate a seção*/
+}
+
+main section#visaogeral h1{
+    text-align: center;
+    text-transform: uppercase;
+    color: white;
+    font-size: 2rem;
+}
+
+main section#visaogeral p{
+    text-align: justify;
+    line-height: 1.6;
+    margin-bottom: 1.2em;
+    font-size: 1em;
+    font-family: var(--font2);
+    color: white;
+}
+
+/*--Mapas--*/
+main section#mapas{
+    width: 90dvw;
+    min-height: 800px;
+    color: white;
+    position: relative;
+    margin: 100px auto 40px;
+    font-family: var(--font3);
+    scroll-margin-top: 150px; 
+}
+
+main section#mapas h1.titulo{
+    justify-content: center;
+    text-align: center;
+    text-transform: uppercase;
+    color: white;
+    font-size: 2rem;
+}
+
+main section#mapas div.imagens_mapas{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+main section#mapas div.imagens_mapas div.elemento_mapa{
+    color: white;
+    border: 3px solid transparent;
+    width: 384px;
+    margin: 15px;
+    transition: transform 0.5s ease-out;
+}
+
+main section#mapas div.imagens_mapas div.elemento_mapa:hover{
+    border: 3px solid rgb(250, 185, 0);
+    transform: scale(1.10);
+    cursor: pointer;
+}
+
+main section#mapas div.imagens_mapas div.elemento_mapa div.desc{
+    margin-top: -6px;
+    background-color: #111;
+    font-family: var(--font1);
+    font-size: var(--fontSize);
+    padding: 25px;
+}
+
+/*--Agentes--*/
+main section#agentes{
+    width: 90dvw;
+    min-height: 1200px;
+    color: white;
+    position: relative;
+    margin: 0px auto 80px;
+    font-family: var(--font3);
+    scroll-margin-top: 150px; 
+}
+
+main section#agentes h1.titulo{
+    justify-content: center;
+    text-align: center;
+    text-transform: uppercase;
+    color: white;
+    font-size: 2rem;
+}
+
+main section#agentes h2.subtitulo{
+    justify-content: center;
+    text-align: center;
+    text-transform: uppercase;
+    color: rgb(250, 185, 0);
+    font-size: 1.3rem;
+}
+
+main section#agentes div.imagens_agentes div.elemento_agente{ /*formata tanto para os elementos do ataque quanto da defesa*/
+    color: white;
+    border: 3px solid transparent;
+    width: 225px;
+    margin: 15px;
+    transition: transform 0.5s ease-out;
+}
+
+main section#agentes div.imagens_agentes div.elemento_agente:hover{ /*formata tanto para os elementos do ataque quanto da defesa*/
+    border: 3px solid rgb(250, 185, 0);
+    transform: scale(1.10);
+    cursor: pointer;
+}
+
+main section#agentes div.imagens_agentes div.atacantes{
+    width: 70dvw;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+main section#agentes div.imagens_agentes div.defensores{
+    width: 70dvw;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+main section#agentes div.imagens_agentes div.elemento_agente div.desc{ /*formata tanto para os elementos do ataque quanto da defesa*/
+    margin-top: -6px;
+    background-color: #111;
+    font-family: var(--font1);
+    font-size: var(--fontSize);
+    padding: 25px;
+}
+
+/*--Esports--*/
+main section#esports{
+    width: 60dvw;
+    margin: 100px auto 10px auto;
+    scroll-margin-top: 150px; 
+}
+
+main section#esports h1{
+    text-align: center;
+    text-transform: uppercase;
+    color: white;
+    font-size: 2rem;
+}
+
+main section#esports p{
+    text-align: justify;
+    line-height: 1.6;
+    margin-bottom: 1.2em;
+    font-size: 1em;
+    font-family: var(--font2);
+    color: white;
+}
+
+section#campeonatos{
+    padding: 40px 20px;
+    color: white;
+    font-family: var(--font2);
+}
+
+main section#campeonatos h2{
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 40px;
+    text-transform: uppercase;
+    color: rgb(250, 185, 0);
+}
+
+section#campeonatos div.campeao{
+  max-width: 800px;
+  margin: 0 auto 60px auto;
+  background-color: #111;
+  border: 1px solid #151515;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 0 20px rgb(250, 185, 0);
+  transition: transform 0.3s ease;
+}
+
+section#campeonatos div.campeao:hover{
+  transform: scale(1.05);
+}
+
+section#campeonatos div.campeao img{
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+}
+
+section#campeonatos div.campeao h3{
+  font-size: 1.6rem;
+  background-color: #111;
+  padding: 15px;
+  margin: 0;
+  color: rgb(250, 185, 0);
+}
+
+section#campeonatos div.campeao p{
+  padding: 0 16px 16px 16px;
+  line-height: 1.6;
+  font-size: 1rem;
+}
+
+/*--Footer--*/
+footer{
+    background-color: #1f1f1f;
+    color: #ccc;
+    padding: 20px;
+    font-family: var(--font3);
+    font-size: 0.8rem;
+}
+
+footer div.conteudo{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    max-width: 80dvw;
+    align-items: center;
+    margin: 0 auto;
+}
+
+footer div.conteudo > div{
+    flex: 1 1 200px;
+    margin: 20px;
+}
+
+footer div.conteudo div.marca h2{
+    color: #fff;
+}
+
+footer div.conteudo div.links ul{
+    list-style: none;
+    padding: 0;
+}
+
+footer div.conteudo div.links ul li{
+    margin: 8px 0;
+}
+
+footer div.conteudo div.links ul li a{
+    color: #ccc;
+    text-decoration: none;
+}
+
+footer div.conteudo div.links ul li a:hover{
+    color: rgb(250, 185, 0);
+}
+
+footer div.conteudo div.social a{
+    color: #ccc;
+    margin-right: 10px;
+    font-size: 1.2rem;
+}
+
+footer div.conteudo div.social a:hover{
+    color: rgb(250, 185, 0);
+}
+
+footer div.direitos{
+    text-align: center;
+    border-top: 1px solid #333;
+    margin-top: 20px;
+    padding-top: 10px;
+    font-size: 0.9rem;
+    color: #888;
+}
+
+@media (min-width:768px) and (max-width:1023px){
+    :root {
+        --fontSize: 18px;
+    }
+
+    header#cabecalho img#imagem_fundo{
+        width: 100dvw;
+        height: 65dvh;
+        object-fit: cover;
+    }
+}
+
+@media (min-width:547px) and (max-width:767px){
+    :root {
+        --fontSize: 14px;
+    }
+
+    header#cabecalho img#imagem_fundo{
+        width: 100dvw;
+        height: 50vh;
+        object-fit: cover;
+    }
+
+    header#cabecalho nav#menu{
+        position: absolute;
+        width: 100dvw;
+        height: 12dvh;
+    }
+
+    header#cabecalho nav#menu ul{
+        margin: auto;
+    }
+
+    header#cabecalho nav#menu ul li#logo a img{
+        width: 40px;  
+    }   
+}
+
+@media screen and (max-width:546px){
+    :root {
+        --fontSize: 11px;
+    }
+
+    header#cabecalho img#imagem_fundo{
+        width: 100dvw;
+        height: 40vh;
+        object-fit: cover;
+    }
+
+    header#cabecalho nav#menu{
+        position: absolute;
+        width: 100dvw;
+        height: 10dvh;
+    }
+
+    header#cabecalho nav#menu ul{
+        padding: 0px 5px;
+        margin: auto;
+        gap: 5px;
+    }
+
+    header#cabecalho nav#menu ul li#logo a img{
+        width: 30px;  
+    }
+}
